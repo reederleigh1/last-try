@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Keep your existing palette by editing these only if needed */
+:root{
+  --bg:#000000;         /* black */
+  --fg:#ffffff;         /* white */
+  --brand:#0fb9d8;      /* bimini blue placeholder - change to your exact hex if different */
+  --accent:#ff2d55;     /* optional accent */
+  --card:#0b0b0b;
+  --muted:#9aa0a6;
+}
+html,body{height:100%}
+body{background:var(--bg); color:var(--fg)}
+/* Utility bridges */
+.bg-brand{background:var(--brand)}
+.text-brand{color:var(--brand)}
+.border-brand{border-color:var(--brand)}
+.bg-accent{background:var(--accent)}
+.text-accent{color:var(--accent)}
+.border-accent{border-color:var(--accent)}
+.bg-card{background:var(--card)}
+.text-muted{color:var(--muted)}
