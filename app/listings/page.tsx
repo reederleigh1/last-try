@@ -1,5 +1,5 @@
-import { getActiveListings } from "@/src/lib/db";
-import ListingCard from "@/components/ListingCard";
+import { getActiveListings } from "@/lib/db";
+import ListingCard from "../../components/ListingCard";
 
 export default async function ListingsPage(){
   const listings = await getActiveListings(60);
@@ -12,3 +12,5 @@ export default async function ListingsPage(){
     </div>
   );
 }
+
+

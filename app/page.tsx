@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getActiveListings } from "@/src/lib/db";
-import ListingCard from "@/components/ListingCard";
+import { getActiveListings } from "@/lib/db";
+import ListingCard from "../components/ListingCard";
 
 export default async function Home(){
   const listings = await getActiveListings(12);
@@ -21,3 +21,5 @@ export default async function Home(){
     </section>
   );
 }
+
+

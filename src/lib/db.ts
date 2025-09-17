@@ -3,8 +3,7 @@ import supabaseAdmin from "./supabaseAdmin";
 export async function getActiveListings(limit = 24) {
   const { data, error } = await supabaseAdmin
     .from("listings")
-    .select("id,title,price,city,thumbnail_url,slug,created_at")
-    .eq("status","active")
+    .select("id,title,price,created_at")
     .order("created_at",{ ascending:false })
     .limit(limit);
   if (error) throw error;
@@ -20,3 +19,4 @@ export async function getListingBySlug(slug: string) {
   if (error) throw error;
   return data;
 }
+

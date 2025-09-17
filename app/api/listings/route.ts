@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import supabaseAdmin from "@/src/lib/supabaseAdmin";
+import supabaseAdmin from "@/lib/supabaseAdmin";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2023-10-16" });
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2025-08-27.basil" });
 
 export async function POST(req: Request){
   const body = await req.json();
@@ -13,7 +13,6 @@ export async function POST(req: Request){
     title: body.title,
     description: body.description,
     price: Number(body.price || 0),
-    city: body.city || "Oklahoma City",
     thumbnail_url: body.thumbnail_url || "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop",
     slug,
     status: "pending"
@@ -40,3 +39,5 @@ export async function POST(req: Request){
 
   return NextResponse.json({ checkoutUrl: session.url });
 }
+
+

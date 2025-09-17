@@ -9,3 +9,4 @@ export const supabase = createClient(
   { auth: { persistSession: true } }
 );
 export default supabase;
+

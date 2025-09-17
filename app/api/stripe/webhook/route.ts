@@ -1,13 +1,13 @@
 import { headers } from "next/headers";
 import Stripe from "stripe";
-import supabaseAdmin from "@/src/lib/supabaseAdmin";
+import supabaseAdmin from "@/lib/supabaseAdmin";
 
 export const dynamic = "force-dynamic";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2023-10-16" });
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2025-08-27.basil" });
 
 export async function POST(req: Request){
-  const sig = headers().get("stripe-signature")!;
+  const sig = (await headers()).get("stripe-signature")!;
   const body = await req.text();
 
   let event: Stripe.Event;
@@ -31,3 +31,5 @@ export async function POST(req: Request){
 
   return new Response(null, { status: 200 });
 }
+
+

@@ -9,3 +9,4 @@ export const supabaseAdmin = createClient(
   { auth: { persistSession: false } }
 );
 export default supabaseAdmin;
+
