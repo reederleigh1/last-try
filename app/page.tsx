@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getActiveListings } from "@/lib/db";
 import ListingCard from "../components/ListingCard";
+export const dynamic = "force-dynamic";
 
 export default async function Home(){
   const listings = await getActiveListings(12);

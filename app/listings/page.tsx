@@ -1,5 +1,6 @@
 import { getActiveListings } from "@/lib/db";
 import ListingCard from "../../components/ListingCard";
+export const dynamic = "force-dynamic";
 
 export default async function ListingsPage(){
   const listings = await getActiveListings(60);
