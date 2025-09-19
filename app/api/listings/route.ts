@@ -9,7 +9,7 @@ const NEXT_PUBLIC_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 if (!STRIPE_SECRET_KEY) throw new Error("STRIPE_SECRET_KEY missing");
 if (!NEXT_PUBLIC_SITE_URL) throw new Error("NEXT_PUBLIC_SITE_URL missing");
 
-const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: "2025-08-27.basil" });
+const stripe = new Stripe(STRIPE_SECRET_KEY);
 
 const createListingSchema = z.object({
   title: z.string().trim().min(1, "Title is required"),

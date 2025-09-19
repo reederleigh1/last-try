@@ -105,9 +105,9 @@ export default async function ListingView({ params }: Props) {
           <div className="rounded-3xl border border-brand/20 bg-slate-950/60 p-6 text-white">
             <h2 className="text-lg font-semibold text-brand">Suggested next steps</h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Publish a Google Business Profile update linking to this listing.</li>
-              <li>• Share on local Facebook groups, Nextdoor, and newsletters for referral traffic.</li>
-              <li>• Track leads through the dashboard and adjust pricing or offers to improve conversion rate.</li>
+              <li>Publish a Google Business Profile update linking to this listing.</li>
+              <li>Share on local Facebook groups, Nextdoor, and newsletters for referral traffic.</li>
+              <li>Track leads through the dashboard and adjust pricing or offers to improve conversion rate.</li>
             </ul>
           </div>
         </section>
