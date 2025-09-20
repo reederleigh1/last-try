@@ -2,6 +2,7 @@ import "./styles/globals.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "OKC Listings | Local Live Listings",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://okclistings1.com")
 };
 
-export default function RootLayout({children}:{children:React.ReactNode}){
+export default function RootLayout({ children }: { children: ReactNode }){
   return (
     <html lang="en">
       <body className="min-h-screen bg-bg text-fg">
@@ -21,5 +22,7 @@ export default function RootLayout({children}:{children:React.ReactNode}){
     </html>
   );
 }
+
+
 
 

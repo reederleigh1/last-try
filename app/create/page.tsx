@@ -1,14 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 export default function CreatePage(){
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string|null>(null);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
-    e.preventDefault();
+  async function handleSubmit(event: FormEvent<HTMLFormElement>){
+    event.preventDefault();
     setLoading(true); setError(null);
-    const form = new FormData(e.currentTarget);
+    const form = new FormData(event.currentTarget);
     const payload = Object.fromEntries(form.entries());
     const res = await fetch("/api/listings", { method:"POST", body: JSON.stringify(payload) });
     if(!res.ok){ setError("Failed to start checkout"); setLoading(false); return; }
@@ -31,5 +31,6 @@ export default function CreatePage(){
     </div>
   );
 }
+
 
 

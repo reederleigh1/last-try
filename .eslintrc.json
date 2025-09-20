@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "extends": ["next", "next/core-web-vitals"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off"
+  }
+}

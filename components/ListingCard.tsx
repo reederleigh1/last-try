@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type ListingCardItem = {
@@ -28,18 +29,21 @@ export default function ListingCard({ item }: ListingCardProps) {
       : "$10 monthly";
   const cityLabel = item.city?.trim() || "Oklahoma City, OK";
   const summary = item.description
-    ? `${item.description.slice(0, 96)}${item.description.length > 96 ? "…" : ""}`
+    ? `${item.description.slice(0, 96)}${item.description.length > 96 ? "." : ""}`
     : "SEO-optimized Oklahoma City listing for local services, rentals, and events.";
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-brand/30 bg-card/80 shadow-xl transition hover:border-brand/60">
-      <img
+      <Image
         src={
           item.thumbnail_url ||
           "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop"
         }
         alt={item.title}
+        width={1200}
+        height={800}
         className="h-48 w-full object-cover"
+        sizes="(max-width: 768px) 100vw, 380px"
       />
       <div className="flex flex-1 flex-col gap-3 p-6">
         <div>

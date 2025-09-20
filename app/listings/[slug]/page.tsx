@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getListingBySlug } from "@/lib/db";
@@ -87,13 +88,16 @@ export default async function ListingView({ params }: Props) {
 
       <div className="grid gap-8 lg:grid-cols-[2fr,1fr]">
         <section className="space-y-6">
-          <img
+          <Image
             src={
               listing.thumbnail_url ||
               "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop"
             }
             alt={listing.title}
+            width={1200}
+            height={800}
             className="h-80 w-full rounded-3xl object-cover"
+            sizes="(max-width: 1024px) 100vw, 640px"
           />
           <div className="space-y-4 text-muted">
             <p>{listing.description}</p>
